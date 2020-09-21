@@ -17,9 +17,14 @@
 
 get_header(); ?>
 
-<div>
-	
-
+<div class="blog-title">
+	<h1>The Unicorn & a Duck</h1>
+	<div class="search-container">
+		<form action="/action_page.php">
+			<input type="text" placeholder="Search blog" name="search">
+			<button type="submit"><img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-search.svg"></button>
+		</form>
+	</div>
 </div>
 
 
