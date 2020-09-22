@@ -12,36 +12,58 @@
 
 get_header(); ?>
 
-<div class="wrap">
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<div class="single-post-banner">
+	<div>
+		<h3>neki tajtl</h3>
+		<p>neki autor lol</p>
+	</div>
+	<a href="">back to blog</a>
+</div>
+<div>
+	<p>počnimo sa nekim paragrafom</p>
+	<span>heaven-on-earth</span>
+	<p>drugi neki paragraf</p>
+	<h4>tu neki citat sa strane</h4>
+</div>
+<div>
+	<video>tu neki videjo</video>
+	<h5>neki mali podnaslob</h5>
+</div>
+<div>
+	<h5>opet naslović</h5>
+	<p>opet neka hrpa teksta</p>
+	<h3>i opet neki citat između</h3>
+</div>
+<div>
+	<h5>opet tajtl</h5>
+	<p><span>The creature</span> kept on typing</p>
+</div>
+<div>
+	<img src="<?php bloginfo('template_url'); ?>/assets/images/img-unicorn7.png">
+	<h5>Truffle is wild mushroom</h5>
+</div>
+<div>
+	<h5>The purest creature</h5>
+	<p>opet hrpa teksta ololo</p>
+</div>
+<div>
+	<h5>wtf se događa</h5>
+	<p>sa svim ovim tekstom lol</p>
 
-			<?php
-			// Start the Loop.
-			while ( have_posts() ) :
-				the_post();
+</div>
+<h4>tagovi ovdje</h4>
 
-				get_template_part( 'template-parts/post/content', get_post_format() );
+<a href="">more magic</a>
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
-
-				the_post_navigation(
-					array(
-						'prev_text' => '<span class="screen-reader-text">' . __( 'Previous Post', 'twentyseventeen' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Previous', 'twentyseventeen' ) . '</span> <span class="nav-title"><span class="nav-title-icon-wrapper">' . twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '</span>%title</span>',
-						'next_text' => '<span class="screen-reader-text">' . __( 'Next Post', 'twentyseventeen' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Next', 'twentyseventeen' ) . '</span> <span class="nav-title">%title<span class="nav-title-icon-wrapper">' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ) . '</span></span>',
-					)
-				);
-
-			endwhile; // End the loop.
-			?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-	<?php get_sidebar(); ?>
-</div><!-- .wrap -->
-
+<div>
+	<div>
+		<img src="">
+	</div>
+	<div>
+		<h5>mali naslov</h5>
+		<p>neki tekst za ponuđeni post</p>
+		<a href="">read more</a>
+	</div>
+</div>
 <?php
 get_footer();
