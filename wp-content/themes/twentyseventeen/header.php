@@ -25,8 +25,8 @@
 <body <?php body_class(); ?>>
 	<header class="header">
 		<div class="logo">
-			<div>
-				<img src="<?php bloginfo('template_url'); ?>/assets/images/Logo@2x.png">
+			<div class="nav-logo">
+				<img src="<?php bloginfo('template_url'); ?>/assets/images/Logo.png">
 			</div>
 		</div>
 		<div class="container">
@@ -52,12 +52,12 @@
             <li><a href="#">photography</a></li>
           </ul>
       </div> -->
-
-  </div>
-  <div class="nav-btn">
+<div class="nav-btn">
   	<a href="">get for ios</a>
   	<a href="">unicorn owners</a>
   </div>
+  </div>
+  
 </div>
 
 <div class="blog-title">
