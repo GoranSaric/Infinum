@@ -22,27 +22,36 @@
 	<?php wp_head(); ?>
 </head>
 
+
+
+<!-- <script type="text/javascript">
+    jQuery(document).ready(function() {
+	jQuery(".nav-btn-1").prepend('<img src="<?php bloginfo('template_url'); ?>ic-apple.svg" />')
+    });
+  </script> -->
+
+
+
 <body <?php body_class(); ?>>
-	<header class="header">
-		<div class="logo">
-			<div class="nav-logo">
-				<img src="<?php bloginfo('template_url'); ?>/assets/images/Logo.png">
-			</div>
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-2" id="main-menu-zavrsni">
-					<?php 
-					$args = array(
-						'menu'            => 2,
-						'container'       => 'div',
-						'container_class' => 'menu',
-						'container_id'    => '',
-						'menu_class'      => '',
-						'menu_id'         => 'main-menu'
-					);
-					wp_nav_menu( $args );
-					?>
+	<header class="header clearfix">
+		<div class="header-wrapper">
+				<div class="nav-logo">
+					<img src="<?php bloginfo('template_url'); ?>/assets/images/Logo.png">
+				</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-2" id="main-menu-zavrsni">
+						<?php 
+						$args = array(
+							'menu'            => 2,
+							'container'       => 'div',
+							'container_class' => 'menu',
+							'container_id'    => '',
+							'menu_class'      => '',
+							'menu_id'         => 'main-menu'
+						);
+						wp_nav_menu( $args );
+						?>
    <!--<div class="menu">
           <ul>
             <li class="active"><a href="#">Home</a></li>
@@ -52,15 +61,9 @@
             <li><a href="#">photography</a></li>
           </ul>
       </div> -->
-<div class="nav-btn">
-  	<a href="">get for ios</a>
-  	<a href="">unicorn owners</a>
   </div>
-  </div>
-  
 </div>
-
-
+</div>
 </div>
 </header>
 

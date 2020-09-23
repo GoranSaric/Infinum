@@ -24,8 +24,48 @@ h1, h2, h3, h4, h5, h6, p, a, span, ul, li {
 body {
 	margin: 0;
 }
+
+/* Header styling */
+.nav-logo {
+  float: left;
+  margin-left: 2%;
+}
+#main-menu {
+  float: right;
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  margin-right: 5%;
+}
+.menu-item a {
+  text-decoration: none;
+  color: #000;
+  margin: 0 20px;
+  font-size: 20px;
+  padding: 15px 25px;
+}
+.nav-btn-1 a {
+  text-transform: uppercase;
+}
+.menu-item a:hover {
+  border: 1px #e6e6e6;
+  padding: 15px 25px;
+  color: #fff;
+  border-radius: 5px;
+  background-color: #b3b3b3;
+  transition: all 0.5s ease-in-out;
+}
+.menu-item a:focus {
+  background-color: #dc4ba3;
+  border: 1px #e6e6e6;
+  padding: 15px 25px;
+  color: #fff;
+  border-radius: 5px;
+  transition: all 0.5s ease-in-out;
+}
+/* Header styling */
+
 .blog-title h1 {
-	font-family: 'MuseoSansRounded';
 	font-weight: 300;
 	font-size: 50px;
 	text-align: center;
