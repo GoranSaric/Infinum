@@ -33,7 +33,7 @@
 
 
 <body <?php body_class(); ?>>
-	<header class="header clearfix">
+	<header class="clearfix">
 		<div class="header-wrapper">
 				<div class="nav-logo">
 					<img src="<?php bloginfo('template_url'); ?>/assets/images/Logo.png">

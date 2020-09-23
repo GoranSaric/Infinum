@@ -26,6 +26,9 @@ body {
 }
 
 /* Header styling */
+.header-wrapper {
+  padding: 2% 0;
+}
 .nav-logo {
   float: left;
   margin-left: 2%;
@@ -70,11 +73,15 @@ body {
 	font-size: 50px;
 	text-align: center;
 	color: #FF5BE6;
+  padding-top: 4%;
 }
-.search-container {
-  float: right;
+.search-container form {
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  justify-content: center;
+  flex-direction: row-reverse;
 }
-
 input[type=text] {
   padding: 6px;
   margin-top: 8px;
@@ -91,7 +98,76 @@ input[type=text] {
   font-size: 17px;
   border: none;
   cursor: pointer;
+  margin-left: 9%;
 }
+
+/* Favorite post style */
+.front-body-wrapper {
+  margin: 5% auto;
+  width: 1300px;
+}
+.fav-post {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+}
+.fav-post-img {
+  width: 45%;
+  margin-right: 3%;
+}
+.fav-post-content {
+  width: 40%;
+  margin-left: 3%;
+}
+.fav-post-content h5 {
+  color: #aaaaaa;
+  font-size: 16px;
+  margin: 0;
+}
+.fav-post-content h3 {
+  font-size: 40px;
+  margin: 10px 0;
+}
+.fav-post-content .post-tags ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+.fav-post-content .post-tags li {
+  margin-right: 10px;
+  border: 1px solid #f0f0f0;
+  padding: 5px;
+  background-color: #f0f0f0;
+  color: #a0a0a0;
+  cursor: pointer;
+}
+.fav-post-content .post-tags li:hover {
+  border: 1px solid #ff5be6;
+  background-color: #ff5be6;
+  color: #fff;
+}
+.fav-post-content p {
+  font-size: 20px;
+  line-height: 1.5;
+}
+.fav-post-content span {
+  color: #ff5be6;
+}
+.fav-post-likes ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+.fav-post-likes ul li {
+  margin-right: 40px;
+  color: #b7b6b6;
+  font-size: 18px;
+}
+.fav-post-likes ul li img {
+  vertical-align: middle;
+  padding-right: 10px;
+}
+/* Favorite post style */
 
 /* Single post styling */
 .single-post-banner {

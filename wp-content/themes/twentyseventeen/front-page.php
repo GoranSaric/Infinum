@@ -15,8 +15,8 @@
 get_header(); ?>
 
 <div class="blog-title">
-	<h1>The Unicorn & a Duck</h1>
 	<div class="search-container">
+		<h1>The Unicorn & a Duck</h1>
 		<form action="/action_page.php">
 			<input type="text" placeholder="Search blog" name="search">
 			<button type="submit"><img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-search.svg"></button>
@@ -24,6 +24,7 @@ get_header(); ?>
 	</div>
 </div>
 
+<div class="front-body-wrapper clearfix">
 <div class="fav-post">
 	<div class="fav-post-img">
 		<img src="<?php bloginfo('template_url'); ?>/assets/images/img-unicorn.png">
@@ -31,12 +32,19 @@ get_header(); ?>
 	<div class="fav-post-content">
 		<h5><?php the_time( "F j, Y" ); ?></h5>
 		<h3>The legend of the unicorn - Myths and legends</h3>
-		<h5>tags</h5>
-		<p>neki paragraf za sada</p>
+		<div class="post-tags">
+		<ul>
+			<li>Unicorn</li>
+			<li>Pinky</li>
+			<li>Magic</li>
+			<li>Love</li>
+		</ul>
+		</div>
+		<p>Once upon a time in a kingdom far-far away in the lands of the never-ending spring, a king sat in his golden throne and ruled his kingdom in perfect harmony. A person can feel nothing but exuberance at the sight of... <span>Read more</span></p>
 		<div class="fav-post-likes">
 			<ul>
-				<li>faves</li>
-				<li>comments</li>
+				<li><img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-heart.svg">faves</li>
+				<li><img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-comment.svg">comments</li>
 			</ul>
 		</div>
 	</div>
@@ -97,6 +105,7 @@ get_header(); ?>
 				</div>
 			</div>
 		</div>
+</div>
 </div>
 <?php
 get_footer();
