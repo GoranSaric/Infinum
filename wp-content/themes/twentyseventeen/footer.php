@@ -14,12 +14,13 @@
 
 ?>
 
-	<div class="footer-box">
-		<div class="footer-col1">
+<div class="footer-box">
+	<div class="footer-wrapper clearfix">
+		<div class="footer-col-1">
 			<img src="<?php bloginfo('template_url'); ?>/assets/images/Logo.png">
-			<p>© 2015 Uniduck. All rights reserved.</p>
+			<h5>© 2015 Uniduck. All rights reserved.</h5>
 		</div>
-		<div class="footer-col2">
+		<div class="footer-col-2">
 			<ul>
 				<li>Like <span>Uniduck</span> on <img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-facebook.svg"></li>
 				<li>Follow <span>@uniduck</span> on <img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-twitter.svg"></li>
@@ -27,7 +28,7 @@
 			</ul>
 		</div>
 	</div>
-
+</div>
 <?php wp_footer(); ?>
 
 </body>
