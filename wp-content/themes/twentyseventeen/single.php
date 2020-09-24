@@ -46,13 +46,13 @@ get_header(); ?>
 			</div>
 		<?php } ?>
 	</div>
-	
+
 	<?php if ( is_active_sidebar( 'custom-side-bar' ) ) : ?>
 		<?php dynamic_sidebar( 'custom-side-bar' ); ?>
 	<?php endif; ?>
 
 	<div class="single-video">
-		<iframe width="950" height="530" src="https://www.youtube.com/embed/EMO42TVAvnA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<iframe width="100%" height="530" src="https://www.youtube.com/embed/EMO42TVAvnA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		<h6>Truffle & wild mushroom</h6>
 	</div>
 
