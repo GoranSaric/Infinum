@@ -25,21 +25,26 @@
 
 
 <script type="text/javascript">
-    jQuery(document).ready(function() {
-	jQuery(".nav-btn-1 a").prepend('<img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-apple.svg" />');
-    });
-    jQuery(document).ready(function() {
-	jQuery(".nav-btn-2 a").prepend('<img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-unicorn.svg" />');
-    });
-  </script>
+	jQuery(document).ready(function() {
+		jQuery(".nav-btn-1 a").prepend('<img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-apple.svg" />');
+	});
+	jQuery(document).ready(function() {
+		jQuery(".nav-btn-2 a").prepend('<img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-unicorn.svg" />');
+	});
+
+	jQuery(document).ready(function() {
+		jQuery(".single-content p:nth-child(1)").addClass('quote-paragraph');
+	});
+</script>
+
 
 
 <body <?php body_class(); ?>>
 	<header class="clearfix">
 		<div class="header-wrapper">
-				<div class="nav-logo">
-					<img src="<?php bloginfo('template_url'); ?>/assets/images/Logo.png">
-				</div>
+			<div class="nav-logo">
+				<img src="<?php bloginfo('template_url'); ?>/assets/images/Logo.png">
+			</div>
 			<div class="container">
 				<div class="row">
 					<div class="col-2" id="main-menu-zavrsni">
