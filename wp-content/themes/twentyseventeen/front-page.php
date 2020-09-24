@@ -79,8 +79,9 @@ get_header(); ?>
 							?></li>
 						</ul>
 					</div>
+					
+
 					<?php the_excerpt(); ?>
-					<span><a href="<?php the_permalink(); ?>"></a>Read More</span>
 					<div class="post-box-likes">
 						<ul>
 							<li><img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-heart.svg">faves</li>

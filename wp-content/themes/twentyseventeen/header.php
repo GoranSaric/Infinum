@@ -18,7 +18,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<?php wp_head(); ?>
 </head>
 
@@ -26,7 +26,14 @@
 
 <!-- <script type="text/javascript">
     jQuery(document).ready(function() {
-	jQuery(".nav-btn-1").prepend('<img src="<?php bloginfo('template_url'); ?>ic-apple.svg" />')
+	jQuery(".nav-btn-1").prepend('<img src="<?php bloginfo('template_url'); ?>ic-apple.svg" />');
+    });
+  </script> -->
+
+
+<!-- <script type="text/javascript">
+    jQuery(document).ready(function() {
+	$(".post-excerpt").append('</a><span>Read More</span>');
     });
   </script> -->
 

@@ -252,7 +252,7 @@ input[type=text] {
 }
 .post-box {
   width: 31%;
-  margin: 15px;
+  margin: 10px;
   position: relative;
   height: 700px;
   cursor: pointer;
@@ -292,8 +292,12 @@ input[type=text] {
 .post-box-content span {
   font-size: 20px;
   color: #ff5be6;
-  position: absolute;
-  bottom: 20px;
+  padding-left: 10px;
+}
+.post-excerpt {
+  text-decoration: none;
+  color: #ff5be6;
+  padding-left: 10px;
 }
 /* Posts preview */
 
@@ -517,6 +521,9 @@ input[type=text] {
   vertical-align: middle;
 }
 /* Footer Styling */
+@media screen and (max-width: 1300px) {
+
+}
 @media screen and (max-width: 600px) {
   .topnav .search-container {
     float: none;
