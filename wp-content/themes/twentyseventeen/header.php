@@ -24,19 +24,14 @@
 
 
 
-<!-- <script type="text/javascript">
+<script type="text/javascript">
     jQuery(document).ready(function() {
-	jQuery(".nav-btn-1").prepend('<img src="<?php bloginfo('template_url'); ?>ic-apple.svg" />');
+	jQuery(".nav-btn-1 a").prepend('<img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-apple.svg" />');
     });
-  </script> -->
-
-
-<!-- <script type="text/javascript">
     jQuery(document).ready(function() {
-	$(".post-excerpt").append('</a><span>Read More</span>');
+	jQuery(".nav-btn-2 a").prepend('<img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-unicorn.svg" />');
     });
-  </script> -->
-
+  </script>
 
 
 <body <?php body_class(); ?>>
