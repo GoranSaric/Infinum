@@ -29,7 +29,8 @@ body {
 
 /* Header styling */
 .header-wrapper {
-  padding: 2% 0;
+  padding: 3% 0;
+  margin-bottom: 20px;
 }
 .nav-logo {
   float: left;
@@ -138,6 +139,10 @@ input[type=text] {
   text-decoration: none;
   color: #000;
 }
+.fav-post-content h3 a:hover {
+  color: #ff5be6;
+  transition: all 0.3s ease-in-out;
+}
 .fav-post-content p {
   font-size: 20px;
   line-height: 1.5;
@@ -171,9 +176,6 @@ input[type=text] {
 }
 /* Frontpage tags */
 
-
-
-
 /* Post Likes */
 .post-box-likes, .fav-post-likes {
   position: absolute;
@@ -202,7 +204,6 @@ input[type=text] {
 /* Post Likes */
 
 /* Posts preview */
-
 .front-post-containter {
   display: flex;
   margin: 0 auto;
@@ -237,16 +238,18 @@ input[type=text] {
   text-decoration: none;
   color: #000;
 }
+.post-box-content h5 a:hover {
+  color: #ff5be6;
+  transition: all 0.3s ease-in-out;
+}
 .post-box-content p {
   font-size: 20px;
   margin: 5px 0;
   line-height: 1.5;
 }
-
 /* Posts preview */
 
 /* Load More Button */
-
 .post-load-btn {
   text-align: center;
   margin: 5% auto;
@@ -265,15 +268,64 @@ input[type=text] {
   background-color: #ff5be6;
   transition: all 0.3s ease-in-out;
 }
-
-
 /* Load More Button */
 
 /* Single post styling */
 .single-post-banner {
-  background: url(assets/images/img-unicorn-large.png)no-repeat center center;
-  height: 500px;
-  width: 100%;
+  background: url(assets/images/img-unicorn-large.png)no-repeat;
+  min-height: 500px;
+  position: relative;
+}
+.single-post-banner:after {
+  content: " ";
+  z-index: 10;
+  display: block;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+.single-intro-info h3 {
+  font-size: 40px;
+  color: #fff;
+  z-index: 11;
+  position: relative;
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+  cursor: pointer;
+  top: 150px;
+}
+.single-intro-info h5 {
+  text-align: center;
+  color: #fff;
+  z-index: 22;
+  position: relative;
+  top: 150px;
+  cursor: pointer;
+  max-width: 200px;
+  margin: 0 auto;
+}
+.single-intro-info img {
+  vertical-align: middle;
+  padding-right: 10px;
+}
+.back-to-btn {
+  position: absolute;
+  z-index: 22;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: 20px;
+}
+.back-to-btn a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
 }
 /* Single post styling */
 
