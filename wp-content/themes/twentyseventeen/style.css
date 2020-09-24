@@ -17,6 +17,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 */
 h1, h2, h3, h4, h5, h6, p, a, span, ul, li {
   font-family: 'MuseoSansRounded';
+  margin: 0;
+  padding: 0;
 }
 .clearfix {
   clear: both;
@@ -37,7 +39,6 @@ body {
   float: right;
   display: flex;
   list-style-type: none;
-  margin: 0;
   margin-right: 5%;
 }
 .menu-item a {
@@ -51,12 +52,12 @@ body {
   text-transform: uppercase;
 }
 .menu-item a:hover {
-  border: 1px #e6e6e6;
+  border: 1px #b3b3b3;
   padding: 15px 25px;
   color: #fff;
   border-radius: 5px;
   background-color: #b3b3b3;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .menu-item a:focus {
   background-color: #dc4ba3;
@@ -74,6 +75,7 @@ body {
 	text-align: center;
 	color: #FF5BE6;
   padding-top: 4%;
+  cursor: pointer;
 }
 .search-container form {
   display: flex;
@@ -87,6 +89,7 @@ input[type=text] {
   margin-top: 8px;
   font-size: 17px;
   border: none;
+  cursor: pointer;
 }
 
 .search-container button {
@@ -104,12 +107,14 @@ input[type=text] {
 /* Favorite post style */
 .front-body-wrapper {
   margin: 5% auto;
-  width: 1300px;
+  width: 100%;
+  max-width: 1300px;
 }
 .fav-post {
   display: flex;
   width: 100%;
-  margin: 0 auto;
+  margin: 5% auto;
+  cursor: pointer;
 }
 .fav-post-img {
   width: 45%;
@@ -118,6 +123,7 @@ input[type=text] {
 .fav-post-content {
   width: 40%;
   margin-left: 3%;
+  position: relative;
 }
 .fav-post-content h5 {
   color: #aaaaaa;
@@ -128,46 +134,140 @@ input[type=text] {
   font-size: 40px;
   margin: 10px 0;
 }
-.fav-post-content .post-tags ul {
+.fav-post-content h3 a {
+  text-decoration: none;
+  color: #000;
+}
+.fav-post-content p {
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 10px 0;
+}
+.fav-post-content span {
+  color: #ff5be6;
+}
+/* Favorite post style */
+
+/* Frontpage tags */
+.fav-post-content .post-tags ul, .post-box .recent-post-tags ul {
   display: flex;
   list-style-type: none;
   padding: 0;
+  flex-wrap: wrap;
 }
-.fav-post-content .post-tags li {
-  margin-right: 10px;
+.fav-post-content .post-tags li, .post-box .recent-post-tags li {
+  margin: 5px;
   border: 1px solid #f0f0f0;
   padding: 5px;
   background-color: #f0f0f0;
   color: #a0a0a0;
   cursor: pointer;
 }
-.fav-post-content .post-tags li:hover {
+.fav-post-content .post-tags li:hover, .post-box .recent-post-tags li:hover {
   border: 1px solid #ff5be6;
   background-color: #ff5be6;
   color: #fff;
+  transition: all 0.3s ease-in-out;
 }
-.fav-post-content p {
-  font-size: 20px;
-  line-height: 1.5;
+/* Frontpage tags */
+
+
+
+
+/* Post Likes */
+.post-box-likes, .fav-post-likes {
+  position: absolute;
+  bottom: 0;
 }
-.fav-post-content span {
-  color: #ff5be6;
-}
-.fav-post-likes ul {
+.fav-post-likes ul, .post-box-likes ul {
   display: flex;
   list-style-type: none;
   padding: 0;
+  cursor: pointer;
+  flex-wrap: wrap;
 }
-.fav-post-likes ul li {
+.fav-post-likes ul li, .post-box-likes ul li {
   margin-right: 40px;
   color: #b7b6b6;
   font-size: 18px;
 }
-.fav-post-likes ul li img {
+.fav-post-likes ul li:hover, .post-box-likes ul li:hover {
+  color: #ff5be6;
+  transition: all 0.3s ease-in-out;
+}
+.fav-post-likes ul li img, .post-box-likes ul li img {
   vertical-align: middle;
   padding-right: 10px;
 }
-/* Favorite post style */
+/* Post Likes */
+
+/* Posts preview */
+
+.front-post-containter {
+  display: flex;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.post-box {
+  width: 31%;
+  margin: 10px;
+  position: relative;
+  height: 700px;
+  cursor: pointer;
+}
+.post-box:nth-child(3) {
+  margin-right: 0;
+}
+.post-box-img img {
+  width: 100%;
+}
+.post-box h6 {
+  margin: 10px 0;
+  font-size: 15px;
+  color: #aaaaaa;
+}
+.post-box-content {
+  padding: 0 5px;
+}
+.post-box-content h5 {
+  font-size: 30px;
+  margin: 10px 0;
+}
+.post-box-content h5 a {
+  text-decoration: none;
+  color: #000;
+}
+.post-box-content p {
+  font-size: 20px;
+  margin: 5px 0;
+  line-height: 1.5;
+}
+
+/* Posts preview */
+
+/* Load More Button */
+
+.post-load-btn {
+  text-align: center;
+  margin: 5% auto;
+}
+.post-load-btn a {
+  border: 1px solid #b3b3b3;
+  background-color: #b3b3b3;
+  color: #fff;
+  font-size: 30px;
+  padding: 15px 30px;
+  text-decoration: none;
+}
+.post-load-btn a:hover {
+  border: 1px solid #ff5be6;
+  color: #fff;
+  background-color: #ff5be6;
+  transition: all 0.3s ease-in-out;
+}
+
+
+/* Load More Button */
 
 /* Single post styling */
 .single-post-banner {
