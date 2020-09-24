@@ -51,160 +51,52 @@ get_header(); ?>
 	</div>
 
 	<div class="front-post-containter">
-		<div class="post-box">
-			<div class="post-box-img">
-				<img src="<?php bloginfo('template_url'); ?>/assets/images/img-unicorn2.png">
-			</div>
-			<h6><?php the_time( "F j, Y" ); ?></h6>
-			<div class="post-box-content">
-				<h5><a href="">The Unicorn were voted "Consistently Excellent" Pub of the Year</a></h5>
-				<div class="recent-post-tags">
-					<ul>
-						<li>Unicorn</li>
-						<li>Pinky</li>
-						<li>Magic</li>
-						<li>Love</li>
-					</ul>
+		<?php 
+		$mojaObjava = new WP_Query( array( 'posts_per_page' => 6, 'post_type' => 'post',  ) );
+		while($mojaObjava->have_posts()):
+			$mojaObjava->the_post();
+			?>
+			<div class="post-box">
+				<div class="post-box-img">
+					<?php 
+					if(has_post_thumbnail()){
+						the_post_thumbnail( 'large' );
+					}
+					?>
 				</div>
-				<p>Once upon a time in a kingdom far-far away in the lands of the never-ending spring, a king sat in his golden throne and ruled his kingdom</p>
-				<div class="post-box-likes">
-					<ul>
-						<li><img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-heart.svg">faves</li>
-						<li><img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-comment.svg">comments</li>
-					</ul>
+				<h6><?php the_time( "F j, Y" ); ?></h6>
+				<div class="post-box-content">
+					<h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+					<div class="recent-post-tags">
+						<ul>
+							<li><?php
+							$posttags = get_the_tags();
+							if ($posttags) {
+								foreach($posttags as $tag) {
+									echo $tag->name . ' '; 
+								}
+							}
+							?></li>
+						</ul>
+					</div>
+					<?php the_excerpt(); ?>
+					<span><a href="<?php the_permalink(); ?>"></a>Read More</span>
+					<div class="post-box-likes">
+						<ul>
+							<li><img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-heart.svg">faves</li>
+							<li><img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-comment.svg">comments</li>
+						</ul>
+					</div>
 				</div>
-			</div>
-		</div>
 
-	<div class="post-box">
-			<div class="post-box-img">
-				<img src="<?php bloginfo('template_url'); ?>/assets/images/img-unicorn2.png">
 			</div>
-			<h6><?php the_time( "F j, Y" ); ?></h6>
-			<div class="post-box-content">
-				<h5><a href="">The Unicorn were voted "Consistently Excellent" Pub of the Year</a></h5>
-				<div class="recent-post-tags">
-					<ul>
-						<li>Unicorn</li>
-						<li>Pinky</li>
-						<li>Magic</li>
-						<li>Love</li>
-					</ul>
-				</div>
-				<p>Once upon a time in a kingdom far-far away in the lands of the never-ending spring, a king sat in his golden throne and ruled his kingdom</p>
-				<div class="post-box-likes">
-					<ul>
-						<li><img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-heart.svg">faves</li>
-						<li><img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-comment.svg">comments</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		
-	<div class="post-box">
-			<div class="post-box-img">
-				<img src="<?php bloginfo('template_url'); ?>/assets/images/img-unicorn2.png">
-			</div>
-			<h6><?php the_time( "F j, Y" ); ?></h6>
-			<div class="post-box-content">
-				<h5><a href="">The Unicorn were voted "Consistently Excellent" Pub of the Year</a></h5>
-				<div class="recent-post-tags">
-					<ul>
-						<li>Unicorn</li>
-						<li>Pinky</li>
-						<li>Magic</li>
-						<li>Love</li>
-					</ul>
-				</div>
-				<p>Once upon a time in a kingdom far-far away in the lands of the never-ending spring, a king sat in his golden throne and ruled his kingdom</p>
-				<div class="post-box-likes">
-					<ul>
-						<li><img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-heart.svg">faves</li>
-						<li><img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-comment.svg">comments</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	
-	<div class="post-box">
-			<div class="post-box-img">
-				<img src="<?php bloginfo('template_url'); ?>/assets/images/img-unicorn2.png">
-			</div>
-			<h6><?php the_time( "F j, Y" ); ?></h6>
-			<div class="post-box-content">
-				<h5><a href="">The Unicorn were voted "Consistently Excellent" Pub of the Year</a></h5>
-				<div class="recent-post-tags">
-					<ul>
-						<li>Unicorn</li>
-						<li>Pinky</li>
-						<li>Magic</li>
-						<li>Love</li>
-					</ul>
-				</div>
-				<p>Once upon a time in a kingdom far-far away in the lands of the never-ending spring, a king sat in his golden throne and ruled his kingdom</p>
-				<div class="post-box-likes">
-					<ul>
-						<li><img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-heart.svg">faves</li>
-						<li><img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-comment.svg">comments</li>
-					</ul>
-				</div>
-			</div>
-		</div>
+		<?php endwhile; ?>
 
-	<div class="post-box">
-			<div class="post-box-img">
-				<img src="<?php bloginfo('template_url'); ?>/assets/images/img-unicorn2.png">
-			</div>
-			<h6><?php the_time( "F j, Y" ); ?></h6>
-			<div class="post-box-content">
-				<h5><a href="">The Unicorn were voted "Consistently Excellent" Pub of the Year</a></h5>
-				<div class="recent-post-tags">
-					<ul>
-						<li>Unicorn</li>
-						<li>Pinky</li>
-						<li>Magic</li>
-						<li>Love</li>
-					</ul>
-				</div>
-				<p>Once upon a time in a kingdom far-far away in the lands of the never-ending spring, a king sat in his golden throne and ruled his kingdom</p>
-				<div class="post-box-likes">
-					<ul>
-						<li><img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-heart.svg">faves</li>
-						<li><img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-comment.svg">comments</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		
-	<div class="post-box">
-			<div class="post-box-img">
-				<img src="<?php bloginfo('template_url'); ?>/assets/images/img-unicorn2.png">
-			</div>
-			<h6><?php the_time( "F j, Y" ); ?></h6>
-			<div class="post-box-content">
-				<h5><a href="">The Unicorn were voted "Consistently Excellent" Pub of the Year</a></h5>
-				<div class="recent-post-tags">
-					<ul>
-						<li>Unicorn</li>
-						<li>Pinky</li>
-						<li>Magic</li>
-						<li>Love</li>
-					</ul>
-				</div>
-				<p>Once upon a time in a kingdom far-far away ind ruled his kingdom</p>
-				<div class="post-box-likes">
-					<ul>
-						<li><img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-heart.svg">faves</li>
-						<li><img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-comment.svg">comments</li>
-					</ul>
-				</div>
-			</div>
-		</div>
 		
 	</div>
 	<div class="post-load-btn">
-			<a href="#">Load More</a>
-		</div>
+		<a href="#">Load More</a>
+	</div>
 </div>
 <?php
 get_footer();

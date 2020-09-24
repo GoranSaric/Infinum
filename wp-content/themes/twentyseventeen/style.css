@@ -252,7 +252,7 @@ input[type=text] {
 }
 .post-box {
   width: 31%;
-  margin: 10px;
+  margin: 15px;
   position: relative;
   height: 700px;
   cursor: pointer;
@@ -262,6 +262,7 @@ input[type=text] {
 }
 .post-box-img img {
   width: 100%;
+  height: 290px;
 }
 .post-box h6 {
   margin: 10px 0;
@@ -287,6 +288,12 @@ input[type=text] {
   font-size: 20px;
   margin: 5px 0;
   line-height: 1.5;
+}
+.post-box-content span {
+  font-size: 20px;
+  color: #ff5be6;
+  position: absolute;
+  bottom: 20px;
 }
 /* Posts preview */
 
