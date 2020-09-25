@@ -33,7 +33,12 @@
 	});
 
 	jQuery(document).ready(function() {
-		jQuery(".single-content p:nth-child(1)").addClass('quote-paragraph');
+		$(".post-load-btn").click(function(e){
+			$(".post-box:nth-child(n+7)").show("swing")
+			e.preventDefault();
+			$(".post-load-btn").hide()
+			
+		});
 	});
 </script>
 

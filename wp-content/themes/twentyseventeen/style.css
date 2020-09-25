@@ -15,8 +15,6 @@ Tags: Unicorn, Duck, Uniduck, Duckihorn
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
-
-
 @font-face {
   font-family: 'museo_sans_rounded100';
   src: url('museosansrounded-100-webfont.woff2') format('woff2'),
@@ -209,19 +207,24 @@ input[type=text] {
   padding: 0;
   flex-wrap: wrap;
 }
-.fav-post-content .post-tags li, .post-box .recent-post-tags li, .single-tags li {
+.fav-post-content .post-tags li a, .post-box .recent-post-tags li a, .single-tags li a {
   margin: 5px;
   border: 1px solid #f0f0f0;
   padding: 5px;
   background-color: #f0f0f0;
   color: #a0a0a0;
   cursor: pointer;
+  text-decoration: none;
+  border-radius: 3px;
 }
-.fav-post-content .post-tags li:hover, .post-box .recent-post-tags li:hover, .single-tags li:hover {
+.fav-post-content .post-tags li a:hover, .post-box .recent-post-tags li a:hover, .single-tags li a:hover {
   border: 1px solid #ff5be6;
   background-color: #ff5be6;
   color: #fff;
   transition: all 0.3s ease-in-out;
+}
+.single-tags {
+  margin: 30px 0;
 }
 /* Frontpage tags */
 
@@ -267,6 +270,9 @@ input[type=text] {
 }
 .post-box:nth-child(3) {
   margin-right: 0;
+}
+.post-box:nth-child(n+7) {
+  display: none;
 }
 .post-box-img img {
   width: 100%;
@@ -446,9 +452,6 @@ input[type=text] {
 .next-post-img {
   width: 45%;
 }
-.next-post-img img {
-  width: 100%;
-}
 .next-post-content {
   width: 40%;
   margin-left: 3%;
@@ -470,10 +473,12 @@ input[type=text] {
 }
 .next-post-content a {
   position: absolute;
-  bottom: 20px;
+  bottom: 0;
   text-decoration: none;
   color: #555;
   font-size: 20px;
+  left: 0;
+  padding: 0;
 }
 
 

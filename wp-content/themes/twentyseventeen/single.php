@@ -25,32 +25,28 @@ get_header(); ?>
 <div class="single-wrapper clearfix">
 	<div class="single-content">
 		<?php
-
 		while ( have_posts() ) {
 			the_post();
 			?>
-
 			<h5>Heaven on earth</h5>
-
 			<?php the_content(); ?>
-			
-			
-
 			<div class="single-tags">
-				<ul>
-					<li>Unicorn</li>
-					<li>Pinky</li>
-					<li>Magic</li>
-					<li>Love</li>
-				</ul>
+				<?php 
+				$tags = get_the_tags(); 
+				if (!empty($tags)) {
+					$tags = array_chunk($tags,ceil(count($tags)),true);
+					foreach($tags as $v) {
+						echo '<ul>';
+						foreach ($v as $tag) {
+							echo '<li><a href="'.get_tag_link($tag->term_id).'">' . $tag->name . '</a></li>'; 
+						}
+						echo '</ul>';
+					}
+				}
+				?>
 			</div>
 		<?php } ?>
-		<?php if ( is_active_sidebar( 'custom-side-bar' ) ) : ?>
-		<?php dynamic_sidebar( 'custom-side-bar' ); ?>
-	<?php endif; ?>
 	</div>
-
-	
 
 	<div class="single-video">
 		<iframe width="100%" height="530" src="https://www.youtube.com/embed/EMO42TVAvnA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -63,19 +59,28 @@ get_header(); ?>
 	</div>
 
 
+<?php
+
+	while ( have_posts() ) {
+		the_post();
+		?>
 	<div class="next-post">
 		<h4>More Magic</h4>
 		<div class="next-post-box">
 			<div class="next-post-img">
-				<img src="<?php bloginfo('template_url'); ?>/assets/images/img-unicorn5.png">
+				<?php 
+					if(has_post_thumbnail()){
+						the_post_thumbnail( 'large' );
+					}
+					?>
 			</div>
 			<div class="next-post-content">
-				<h5>Sed ut perspiciatis unde omnis</h5>
-				<p>Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet</p>
-				<a href="">Read More</a>
+				<h5><?php the_title(); ?></h5>
+				<p><?php the_excerpt(); ?></p>
 			</div>
 		</div>
 	</div>
+	<?php } ?>
 	<div style="clear: both;"></div>
 </div>
 <?php

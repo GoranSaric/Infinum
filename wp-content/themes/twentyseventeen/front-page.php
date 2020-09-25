@@ -13,7 +13,7 @@
  */
 
 get_header(); ?>
-
+<!-- #### Work in Progress #### -->
 <div class="blog-title">
 	<div class="search-container">
 		<h1>The Unicorn & a Duck</h1>
@@ -49,10 +49,12 @@ get_header(); ?>
 			</div>
 		</div>
 	</div>
+	<!-- #### Work in Progress #### -->
+
 
 	<div class="front-post-containter">
 		<?php 
-		$mojaObjava = new WP_Query( array( 'posts_per_page' => 6, 'post_type' => 'post',  ) );
+		$mojaObjava = new WP_Query( array( 'posts_per_page' => 9, 'post_type' => 'post',  ) );
 		while($mojaObjava->have_posts()):
 			$mojaObjava->the_post();
 			?>
@@ -68,32 +70,32 @@ get_header(); ?>
 				<div class="post-box-content">
 					<h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
 					<div class="recent-post-tags">
-						<ul>
-							<li><?php
-							$posttags = get_the_tags();
-							if ($posttags) {
-								foreach($posttags as $tag) {
-									echo $tag->name . ' '; 
+						<?php 
+						$tags = get_the_tags(); 
+						if (!empty($tags)) {
+							$tags = array_chunk($tags,ceil(count($tags)),true);
+							foreach($tags as $v) {
+								echo '<ul>';
+								foreach ($v as $tag) {
+									echo '<li><a href="'.get_tag_link($tag->term_id).'">' . $tag->name . '</a></li>'; 
 								}
+								echo '</ul>';
 							}
-							?></li>
-						</ul>
+						}
+						?>
 					</div>
 					
 
 					<?php the_excerpt(); ?>
 					<div class="post-box-likes">
 						<ul>
-							<li><img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-heart.svg">faves</li>
-							<li><img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-comment.svg">comments</li>
+							<li><img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-heart.svg"><?php echo ' faves' .wpfp_get_current_count(); ?> </li>
+							<li><img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-comment.svg"><?php echo get_comments_number(); ?> comments</li>
 						</ul>
 					</div>
 				</div>
-
 			</div>
 		<?php endwhile; ?>
-
-		
 	</div>
 	<div class="post-load-btn">
 		<a href="#">Load More</a>

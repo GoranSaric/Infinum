@@ -686,8 +686,24 @@ function new_excerpt_more($more) {
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
-
+/* Excert Character limiter */
 function custom_excerpt_length( $length ) {
         return 40;
     }
     add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+/* Excert Character limiter */
+
+
+
+function wpfp_get_current_count() {
+global $wpdb;
+$current_post = get_the_ID();
+$query = "SELECT post_id, meta_value, post_status FROM $wpdb->postmeta";
+$query .= " LEFT JOIN $wpdb->posts ON post_id=$wpdb->posts.ID";
+$query .= " WHERE post_status='publish' AND meta_key='wpfp_favorites' AND post_id = '".$current_post."'";
+$results = $wpdb->get_results($query);
+if ($results) {
+    foreach ($results as $o):
+        echo $o->meta_value;
+    endforeach;
+}else {echo( '0' );}}
