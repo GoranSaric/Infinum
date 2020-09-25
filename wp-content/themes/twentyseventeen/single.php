@@ -28,10 +28,53 @@ get_header(); ?>
 		while ( have_posts() ) {
 			the_post();
 			?>
-			<h5>Heaven on earth</h5>
-			<div class="single-content-func">
-				<?php the_content(); ?>
+
+			<p><?php the_field('first_paragraph'); ?></p>
+
+			<h5><?php the_field('first_sub_title'); ?></h5>
+
+			<p><?php the_field('first_section'); ?></p>
+			<h6 class="upper-quote"><?php the_field('first_quote'); ?></h6>
+			<p><?php the_field('second_section'); ?></p>
+
+
+			<p><?php the_field('third_section'); ?></p>
+
+			
+			<div class="single-video">
+				<?php the_field('single_video'); ?>
+				<h6><?php the_field('video_text'); ?></h6>
 			</div>
+
+			<h5><?php the_field('middle_sub_title'); ?></h5>
+
+			<div class="middle-quote-fight">
+				<p><?php the_field('first_middle_section'); ?></p>
+				<h6 class="lower-quote"><?php the_field('second_quote'); ?></h6>
+				<p><?php the_field('second_middle_section'); ?></p>
+				<p><?php the_field('third_middle_section'); ?></p>
+			</div>
+			
+			<h5><?php the_field('lower_middle_sub_title'); ?></h5>
+
+			<p><?php the_field('lower_middle_paragraph'); ?></p>
+
+			<div class="single-img">
+				<?php if( get_field('single_image') ): ?>
+					<img src="<?php the_field('single_image'); ?>" />
+				<?php endif; ?>
+				<h6><?php the_field('image_text'); ?></h6>
+			</div>
+
+			<h5><?php the_field('lower_title'); ?></h5>
+
+			<p><?php the_field('lower_paragraph'); ?></p>
+
+			<h5><?php the_field('lowest_title'); ?></h5>
+
+			<p><?php the_field('lowest_paragraph'); ?></p>
+
+
 			<div class="single-tags">
 				<?php 
 				$tags = get_the_tags(); 
@@ -50,27 +93,12 @@ get_header(); ?>
 		<?php } ?>
 	</div>
 
-	<div class="single-video">
-		<?php the_field('single_video'); ?>
-		<h6><?php the_field('video_text'); ?></h6>
-	</div>
-
-	<div class="single-img">
-
-		<?php if( get_field('single_image') ): ?>
-			<img src="<?php the_field('single_image'); ?>" />
-		<?php endif; ?>
-		<h6><?php the_field('image_text'); ?></h6>
-	</div>
-
-
 	<?php
-
 	while ( have_posts() ) {
 		the_post();
 		?>
 		<div class="next-post">
-			<h4><?php the_field('recent_post'); ?></h4>
+			<h5><?php the_field('recent_post'); ?></h5>
 			<div class="next-post-box">
 				<div class="next-post-img">
 					<?php 
@@ -80,7 +108,7 @@ get_header(); ?>
 					?>
 				</div>
 				<div class="next-post-content">
-					<h5><?php the_title(); ?></h5>
+					<h6><?php the_title(); ?></h6>
 					<p><?php the_excerpt(); ?></p>
 				</div>
 			</div>

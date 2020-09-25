@@ -191,6 +191,8 @@ input[type=text] {
 }
 .single-tags {
   margin: 30px 0;
+  max-width: 560px;
+  margin: 5% auto;
 }
 /* Frontpage tags */
 
@@ -361,9 +363,11 @@ input[type=text] {
   font-size: 18px;
 }
 .single-content {
-  max-width: 560px;
-  margin: 5% auto;
   cursor: pointer;
+}
+.single-content p, .single-content h5, .single-content h6 {
+  max-width: 560px;
+  margin: 2% auto;
 }
 .single-content h1, h2, h3, h4, h5, h6 {
   color: #555555;
@@ -375,8 +379,21 @@ input[type=text] {
   font-size: 18px;
   color: #555555;
 }
+.upper-quote {
+  color: #ff5be6;
+  float: right;
+  margin: 0 5%;
+}
 .single-video {
   max-width: 950px;
+  margin: 0 auto;
+}
+.middle-quote-fight .lower-quote {
+  color: #ff5be6;
+  float: left;
+  margin: 4% 5%;
+}
+.middle-quote-fight p {
   margin: 0 auto;
 }
 .single-video iframe {
@@ -406,6 +423,10 @@ input[type=text] {
 }
 .next-post {
   cursor: pointer;
+}
+.next-post h5 {
+  max-width: 160px;
+  margin: 5% auto;
 }
 .next-post h4 {
   text-align: center;
@@ -439,7 +460,6 @@ input[type=text] {
   line-height: 1.5;
   font-size: 18px;
   color: #555;
-  margin-top: 20px;
 }
 .next-post-content a {
   position: absolute;
