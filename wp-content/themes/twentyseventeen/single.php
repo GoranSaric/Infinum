@@ -40,7 +40,7 @@ get_header(); ?>
 					foreach($tags as $v) {
 						echo '<ul>';
 						foreach ($v as $tag) {
-							echo '<li><a href="'.get_tag_link($tag->term_id).'">' . $tag->name . '</a></li>'; 
+							echo '<li>' . $tag->name . '</li>'; 
 						}
 						echo '</ul>';
 					}

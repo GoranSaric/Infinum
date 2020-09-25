@@ -41,13 +41,23 @@
 	});
 </script>
 
-
+<script>
+	jQuery(document).ready(function() {
+		$("#btn-display").click(function(){
+			$("#main-menu").toggle("swing");
+		});
+	});
+</script>
 
 <body <?php body_class(); ?>>
 	<header class="clearfix">
 		<div class="header-wrapper">
 			<div class="nav-logo">
 				<img src="<?php bloginfo('template_url'); ?>/assets/images/Logo.png">
+			</div>
+
+			<div id="btn-display">
+				<a>Clickity-Clop</a>
 			</div>
 			<div class="container">
 				<div class="row">

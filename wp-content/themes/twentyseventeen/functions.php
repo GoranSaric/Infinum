@@ -711,8 +711,3 @@ if ($results) {
 
 
 
-
-function first_paragraph($content){
-    return preg_replace('/<p([^>]+)?>/', '<p$1 class="intro">', $content, 1);
-}
-add_filter('the_content', 'first_paragraph');

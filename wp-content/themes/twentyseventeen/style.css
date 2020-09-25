@@ -15,45 +15,6 @@ Tags: Unicorn, Duck, Uniduck, Duckihorn
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
-@font-face {
-  font-family: 'museo_sans_rounded100';
-  src: url('museosansrounded-100-webfont.woff2') format('woff2'),
-  url('museosansrounded-100-webfont.woff') format('woff');
-}
-@font-face {
-  font-family: 'museo_sans_rounded300';
-  src: url('museosansrounded-300-webfont.woff2') format('woff2'),
-  url('museosansrounded-300-webfont.woff') format('woff');
-}
-@font-face {
-  font-family: 'museo_sans_rounded500';
-  src: url('museosansrounded-500-webfont.woff2') format('woff2'),
-  url('museosansrounded-500-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'museo_sans_rounded700';
-  src: url('museosansrounded-700-webfont.woff2') format('woff2'),
-  url('museosansrounded-700-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'museo_sans_rounded900';
-  src: url('museosansrounded-900-webfont.woff2') format('woff2'),
-  url('museosansrounded-900-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'museo_sans_rounded1000';
-  src: url('museosansrounded-1000-webfont.woff2') format('woff2'),
-  url('museosansrounded-1000-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
 
 h1, h2, h3, h4, h5, h6, p, a, span, ul, li {
   margin: 0;
@@ -65,7 +26,9 @@ h1, h2, h3, h4, h5, h6, p, a, span, ul, li {
 body {
  margin: 0;
 }
-
+#btn-display {
+  display: none;
+}
 /* Header styling */
 .header-wrapper {
   padding: 3% 0;
@@ -168,6 +131,9 @@ input[type=text] {
   width: 45%;
   margin-right: 3%;
 }
+.fav-post-img img {
+  width: 100%;
+}
 .fav-post-content {
   width: 40%;
   margin-left: 3%;
@@ -207,7 +173,7 @@ input[type=text] {
   padding: 0;
   flex-wrap: wrap;
 }
-.fav-post-content .post-tags li a, .post-box .recent-post-tags li a, .single-tags li a {
+.fav-post-content .post-tags li, .post-box .recent-post-tags li, .single-tags li {
   margin: 5px;
   border: 1px solid #f0f0f0;
   padding: 5px;
@@ -217,7 +183,7 @@ input[type=text] {
   text-decoration: none;
   border-radius: 3px;
 }
-.fav-post-content .post-tags li a:hover, .post-box .recent-post-tags li a:hover, .single-tags li a:hover {
+.fav-post-content .post-tags li:hover, .post-box .recent-post-tags li:hover, .single-tags li:hover {
   border: 1px solid #ff5be6;
   background-color: #ff5be6;
   color: #fff;
@@ -484,8 +450,6 @@ input[type=text] {
   left: 0;
   padding: 0;
 }
-
-
 /* Single post styling */
 
 
@@ -541,21 +505,84 @@ input[type=text] {
 .footer-col-2 ul li img {
   vertical-align: middle;
 }
-
-
-
-
-
-
 .widget-content {
   float: right;
   margin-right: -154px;
 }
 /* Footer Styling */
-@media screen and (max-width: 1300px) {
 
+/* #### Responsive styling #### */
+
+@media screen and (max-width: 1060px) {
+  .post-box {
+    width: 45%;
+    margin: 10px auto;
+  }
+  .post-box:nth-child(n+9) {
+    display: none!important;
+  }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1060px) {
+ .fav-post {
+  flex-direction: column;
+  align-items: center;
+}
+.fav-post-img {
+  width: 50%;
+}
+.fav-post-content {
+  width: 70%;
+}
+.fav-post-content p {
+  margin: 30px 0;
+}
+.footer-col-1 {
+  margin-left: 2%; 
+}
+.footer-col-2 {
+  float: left;
+}
+}
+@media screen and (max-width: 850px) {
+  .nav-logo {
+    float: unset;
+  }
+  #main-menu {
+    float: unset;
+    margin-top: 2%;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+  .front-post-containter {
+    flex-direction: column;
+  }
+  .post-box {
+    margin: 20px auto;
+    width: 65%;
+  }
+  .post-box:nth-child(3) {
+    margin: 0 auto;
+  }
+  .post-box:nth-child(n+5) {
+    display: none!important;
+  }
+  .post-load-btn {
+    display: none;
+  }
+  .footer-col-1 {
+    width: 45%;
+    margin: 4% auto;
+    margin-left: 10%;
+  }
+  .footer-col-2 {
+    width: 30%;
+    margin: 3% auto;
+  }
+}
+@media screen and (max-width: 680px) {
+  .fav-post-img {
+    width: 80%;
+  }
   .topnav .search-container {
     float: none;
   }
@@ -567,9 +594,80 @@ input[type=text] {
     margin: 0;
     padding: 14px;
   }
-  input[type=text] {
-    border: 1px solid #ccc;  
+  .footer-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .footer-col-1 {
+    width: 65%;
+    margin: 0;
+    margin-left: unset;
+  }
+  .footer-col-2 {
+    width: 65%;
+    margin: 0;
+  }
+  .footer-col-2 ul {
+    text-align: left;
+  }
+  #btn-display {
+    display: block;
+    border: 1px solid #808080;
+    background-color: #808080;
+    color: #fff;
+    padding: 15px 25px;
+    max-width: 100px;
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    transition: all 0.5s ease-in-out;
+    border-radius: 3px;
+  }
+  #btn-display:hover {
+    background-color: #ff5be6;
+    border: 1px solid #ff5be6;
+  }
+  .nav-logo {
+    float: right;
+    margin-right: 5%;
+  }
+  .blog-title {
+    display: none;
+  }
+  #main-menu {
+    display: none;
+  }
+  #main-menu ul {
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 1% 0%;
+    max-width: 300px;
+    float: right;
+  }
+  .menu-item {
+    margin-top: 8%;
+  }
+  .menu-item a {
+    border: 1px #b3b3b3;
+    padding: 15px 25px;
+    color: #fff;
+    border-radius: 5px;
+    background-color: #b3b3b3;
+    transition: all 0.3s ease-in-out;
+  }
+  .nav-btn-1, .nav-btn-2 {
+    margin-top: 5%;
+  }
+  .post-box {
+    height: auto;
   }
 }
-
-
+@media screen and (max-width: 430px) {
+  .menu-item {
+    margin-top: 15%;
+  }
+  .nav-btn-1, .nav-btn-2 {
+    margin-top: 8%;
+  }
+}
