@@ -22,9 +22,11 @@
 		</div>
 		<div class="footer-col-2">
 			<ul>
-				<li>Like <span>Uniduck</span> on <img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-facebook.svg"></li>
-				<li>Follow <span>@uniduck</span> on <img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-twitter.svg"></li>
-				<li>Follow <span>@uniduck</span> on <img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-instagram.svg"></li>
+				<li><a href="https://www.facebook.com/RainbowsandUnicornsLove/" target="_blank">Like <span>Uniduck</span> on <img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-facebook.svg"></a></li>
+
+				<li><a href="https://twitter.com/UnicornsOfLove" target="_blank">Follow <span>@uniduck</span> on <img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-twitter.svg"></a></li>
+				
+				<li><a href="">Follow <span>@uniduck</span> on <img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-instagram.svg"></a></li>
 			</ul>
 		</div>
 	</div>

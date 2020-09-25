@@ -37,7 +37,6 @@
 			$(".post-box:nth-child(n+7)").show("swing")
 			e.preventDefault();
 			$(".post-load-btn").hide()
-			
 		});
 	});
 </script>

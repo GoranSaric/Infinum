@@ -707,3 +707,12 @@ if ($results) {
         echo $o->meta_value;
     endforeach;
 }else {echo( '0' );}}
+
+
+
+
+
+function first_paragraph($content){
+    return preg_replace('/<p([^>]+)?>/', '<p$1 class="intro">', $content, 1);
+}
+add_filter('the_content', 'first_paragraph');

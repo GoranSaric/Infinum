@@ -14,11 +14,11 @@ get_header(); ?>
 
 <div class="single-post-banner">
 	<div class="single-intro-info">
-		<h3>The Legend of the Unicorn - Myths and Legends</h3>
-		<h5><img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-writer.svg">Krešo the Duck</h5>
+		<h3><?php the_title(); ?></h3>
+		<h5><img src="<?php bloginfo('template_url'); ?>/assets/icons/ic-writer.svg"><?php the_author_meta('display_name', 1); ?></h5>
 	</div>
 	<div class="back-to-btn">
-		<a href="">Back to blog</a>
+		<a href="http://localhost/Infinum">Back to blog</a>
 	</div>
 </div>
 
@@ -29,7 +29,9 @@ get_header(); ?>
 			the_post();
 			?>
 			<h5>Heaven on earth</h5>
-			<?php the_content(); ?>
+			<div class="single-content-func">
+				<?php the_content(); ?>
+			</div>
 			<div class="single-tags">
 				<?php 
 				$tags = get_the_tags(); 
@@ -49,37 +51,40 @@ get_header(); ?>
 	</div>
 
 	<div class="single-video">
-		<iframe width="100%" height="530" src="https://www.youtube.com/embed/EMO42TVAvnA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-		<h6>Truffle & wild mushroom</h6>
+		<?php the_field('single_video'); ?>
+		<h6><?php the_field('video_text'); ?></h6>
 	</div>
 
 	<div class="single-img">
-		<img src="<?php bloginfo('template_url'); ?>/assets/images/img-unicorn7@2x.png">
-		<h6>Truffle & wild mushroom</h6>
+
+		<?php if( get_field('single_image') ): ?>
+			<img src="<?php the_field('single_image'); ?>" />
+		<?php endif; ?>
+		<h6><?php the_field('image_text'); ?></h6>
 	</div>
 
 
-<?php
+	<?php
 
 	while ( have_posts() ) {
 		the_post();
 		?>
-	<div class="next-post">
-		<h4>More Magic</h4>
-		<div class="next-post-box">
-			<div class="next-post-img">
-				<?php 
+		<div class="next-post">
+			<h4><?php the_field('recent_post'); ?></h4>
+			<div class="next-post-box">
+				<div class="next-post-img">
+					<?php 
 					if(has_post_thumbnail()){
 						the_post_thumbnail( 'large' );
 					}
 					?>
-			</div>
-			<div class="next-post-content">
-				<h5><?php the_title(); ?></h5>
-				<p><?php the_excerpt(); ?></p>
+				</div>
+				<div class="next-post-content">
+					<h5><?php the_title(); ?></h5>
+					<p><?php the_excerpt(); ?></p>
+				</div>
 			</div>
 		</div>
-	</div>
 	<?php } ?>
 	<div style="clear: both;"></div>
 </div>
